@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/19/md/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/23/history/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/19/md/" class="post-title-link" itemprop="url">MD语法</a>
+            <a href="/2021/11/23/history/" class="post-title-link" itemprop="url">vue-router及浏览器history</a>
         </h2>
 
         <div class="post-meta">
@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-19 17:12:54 / Modified: 17:13:07" itemprop="dateCreated datePublished" datetime="2021-11-19T17:12:54+08:00">2021-11-19</time>
+              <time title="Created: 2021-11-23 14:51:36 / Modified: 19:08:10" itemprop="dateCreated datePublished" datetime="2021-11-23T14:51:36+08:00">2021-11-23</time>
             </span>
 
           
@@ -184,7 +184,178 @@
     <div class="post-body" itemprop="articleBody">
 
       
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想看vue-router源码，顺便搞懂浏览器history相关</p>
+<h3 id="浏览器history"><a href="#浏览器history" class="headerlink" title="浏览器history"></a>浏览器history</h3><ul>
+<li><p>hash</p>
+</li>
+<li><p>window.location</p>
+</li>
+<li><p>popstate</p>
+</li>
+<li><p>浏览器历史记录</p>
+</li>
+<li><p>hash<br>网页地址中， #及后边的字符称作hash<br>hash 变动，不会重新请求后台，单会生成一个历史<br>onhashchange 监听hash变化</p>
+</li>
+<li><p>popstate  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.onpopstate = ()=&gt;&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>pushState replaceState()不会触发onpopstate事件<br>只会在浏览器的某些行为下触发，如：前进 后退，或者js调用history.forward back go 时，或者a标签的描点也会触发该事件  </p>
+<ul>
+<li>pushState()<br>生成一个新的历史条目,不会跳转  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(&#123;&#125;,&#x27;title&#x27;,path); // path需要和当前path同origin</span><br></pre></td></tr></table></figure></li>
+<li>replaceState()<br>修改当前的历史条目,不会跳转  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.replaceState(&#123;&#125;,&#x27;title&#x27;,path); // path需要和当前path同origin</span><br></pre></td></tr></table></figure></li>
+<li>但是浏览器的历史记录表现异常</li>
+</ul>
+</li>
+</ul>
+<h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h3><p>hhahhahha 123123123123</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/unicode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
           
+            <a href="/2021/11/22/unicode/" class="post-title-link" itemprop="url">编码相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-22 11:28:37" itemprop="dateCreated datePublished" datetime="2021-11-22T11:28:37+08:00">2021-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-23 19:08:04" itemprop="dateModified" datetime="2021-11-23T19:08:04+08:00">2021-11-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="js-默认-UTF-16存储"><a href="#js-默认-UTF-16存储" class="headerlink" title="js 默认 UTF-16存储"></a><strong>js 默认 UTF-16存储</strong></h3><h3 id="几个API"><a href="#几个API" class="headerlink" title="几个API"></a>几个API</h3><ul>
+<li>charAt()<br>返回字符串中的字符 str.charAt(index)</li>
+<li>charCodeAt(index)<br>返回字符串首字符的Unicode  str.charCodeAt(index)</li>
+<li>charPointAt(index)<br>返回字符串首字符的Unicode  str.charPointAt(index)<br>js 默认 UTF-16存储，有些字符码点大于 0x10000，js会识别为两个字符(四字节），如：𠮷（ji），𠮷.length = 2;<br>如果某个字符为四字节 charPointAt会返回全部的码点，（具体看文档）  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;𠮷&quot;</span><br><span class="line">str.length   3</span><br><span class="line">str.codePointAt(2) 97</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="字符集-Unicode-和-编码方式-UTF-8-的关系"><a href="#字符集-Unicode-和-编码方式-UTF-8-的关系" class="headerlink" title="字符集 Unicode 和 编码方式 UTF-8 的关系"></a>字符集 Unicode 和 编码方式 UTF-8 的关系</h3><ul>
+<li>字符集只是码点和字符的映射，编码方式是计算机存储字符码点的方式</li>
+<li>为什么用编码方式？<ul>
+<li>一个字符可能用单个字节、多个字节表示，需要标识某个字节是单独一个字符传，还是某个多个字节的一部分</li>
+</ul>
+</li>
+<li>编码方式有编码和解码两个行为，<ul>
+<li>编码：将某个值通过算法编码</li>
+<li>解码：反编码，至计算机可以正确识别字符集的码点。</li>
+<li>在编辑器里切换编码方式，导致乱码，是因为通过当前编码方式 解码失败</li>
+</ul>
+</li>
+</ul>
+<h3 id="utf-8-utf-16-utf-32"><a href="#utf-8-utf-16-utf-32" class="headerlink" title="utf-8 utf-16 utf-32"></a>utf-8 utf-16 utf-32</h3><ul>
+<li><p>utf-8<br>单字节 或者多字节<br>0xxxxxxx<br>110xxxxx 10xxxxxxx<br>1110xxxx 10xxxxxxx 10xxxxxx<br>…<br><a target="_blank" rel="noopener" href="https://taoshu.in/c-utf-8.html">文档</a></p>
+</li>
+<li><p>utf-16<br>两个字节，或者四个字节表示一个Unicode字符<br>如果U（原码点）小于 0x10000, 则不用转换, 原码点即为UTF-16编码。<br>如果U 小于等于 0x10ffff,  先U’ = U - 0x10000，此时 U’ 不会超过20位。可设两个无符号16位的整数W1、W2，将U’分为高十位和低十位，将高十位分分给W1的后十位，将低十位分给W2的后十位，得到两个双字节。<br>W1 W2前缀 官方定义为 101110xxxxxxxxxx 101111xxxxxxxxxx,即 0xD800 0XDC00,为了防止四字节和双字节的语义冲突，Unicode规定  0xD800-oxD8ff 0xDc00-0xDcff,这两个区域不允许分配字符  <a target="_blank" rel="noopener" href="https://blog.csdn.net/xinbaobaoer/article/details/56290210?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-1.no_search_link">文档</a></p>
+</li>
+<li><p>utf-32<br>使用四个字节表示一个unicode字符，浪费资源</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/22/md/" class="post-title-link" itemprop="url">MD语法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-22 11:26:48" itemprop="dateCreated datePublished" datetime="2021-11-22T11:26:48+08:00">2021-11-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="git-submodule"><a href="#git-submodule" class="headerlink" title="git submodule"></a>git submodule</h3>
       
     </div>
 
@@ -394,7 +565,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/11/index.html">
+  <meta name="description" content="前言最近想看vue-router源码，顺便搞懂浏览器history相关 浏览器history hash  window.location  popstate  浏览器历史记录  hash网页地址中， #及后边的字符称作hashhash 变动，不会重新请求后台，单会生成一个历史onhashchange 监听hash变化  popstate   1window.onpopstate &#x3D; ()&#x3D;&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-router及浏览器history">
+<meta property="og:url" content="http://example.com/2021/11/23/history/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言最近想看vue-router源码，顺便搞懂浏览器history相关 浏览器history hash  window.location  popstate  浏览器历史记录  hash网页地址中， #及后边的字符称作hashhash 变动，不会重新请求后台，单会生成一个历史onhashchange 监听hash变化  popstate   1window.onpopstate &#x3D; ()&#x3D;&gt;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-23T06:51:36.000Z">
+<meta property="article:modified_time" content="2021-11-23T11:08:10.963Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/2021/11/">
+<link rel="canonical" href="http://example.com/2021/11/23/history/">
 
 
 <script id="page-configurations">
@@ -36,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Hexo</title>
+  <title>vue-router及浏览器history | Hexo</title>
   
 
 
@@ -139,130 +143,100 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 5 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/23/history/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vue-router及浏览器history
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-23 14:51:36 / Modified: 19:08:10" itemprop="dateCreated datePublished" datetime="2021-11-23T14:51:36+08:00">2021-11-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想看vue-router源码，顺便搞懂浏览器history相关</p>
+<h3 id="浏览器history"><a href="#浏览器history" class="headerlink" title="浏览器history"></a>浏览器history</h3><ul>
+<li><p>hash</p>
+</li>
+<li><p>window.location</p>
+</li>
+<li><p>popstate</p>
+</li>
+<li><p>浏览器历史记录</p>
+</li>
+<li><p>hash<br>网页地址中， #及后边的字符称作hash<br>hash 变动，不会重新请求后台，单会生成一个历史<br>onhashchange 监听hash变化</p>
+</li>
+<li><p>popstate  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.onpopstate = ()=&gt;&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-23T14:51:36+08:00"
-              content="2021-11-23">
-          11-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/23/history/" itemprop="url">
-            <span itemprop="name">vue-router及浏览器history</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-22T11:28:37+08:00"
-              content="2021-11-22">
-          11-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/22/unicode/" itemprop="url">
-            <span itemprop="name">编码相关</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-22T11:26:48+08:00"
-              content="2021-11-22">
-          11-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/22/md/" itemprop="url">
-            <span itemprop="name">MD语法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-19T15:13:01+08:00"
-              content="2021-11-19">
-          11-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/19/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-19T14:31:15+08:00"
-              content="2021-11-19">
-          11-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/19/yanzhi/" itemprop="url">
-            <span itemprop="name">yanzhi</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<p>pushState replaceState()不会触发onpopstate事件<br>只会在浏览器的某些行为下触发，如：前进 后退，或者js调用history.forward back go 时，或者a标签的描点也会触发该事件  </p>
+<ul>
+<li>pushState()<br>生成一个新的历史条目,不会跳转  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(&#123;&#125;,&#x27;title&#x27;,path); // path需要和当前path同origin</span><br></pre></td></tr></table></figure></li>
+<li>replaceState()<br>修改当前的历史条目,不会跳转  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.replaceState(&#123;&#125;,&#x27;title&#x27;,path); // path需要和当前path同origin</span><br></pre></td></tr></table></figure></li>
+<li>但是浏览器的历史记录表现异常</li>
+</ul>
+</li>
+</ul>
+<h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h3><p>hhahhahha 123123123123</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/22/unicode/" rel="prev" title="编码相关">
+      <i class="fa fa-chevron-left"></i> 编码相关
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -315,6 +289,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8history"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router"><span class="nav-number">1.2.</span> <span class="nav-text">vue-router</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
