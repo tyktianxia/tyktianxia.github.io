@@ -105,4 +105,4 @@ theme: hexo-theme-next
 deploy:
   type: git
   repo: https://github.com/tyktianxia/tyktianxia.github.io
-  branch: gh-pages
+  branch: main
