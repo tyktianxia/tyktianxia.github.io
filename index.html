@@ -148,6 +148,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yanzhi">
+      <meta itemprop="description" content="擅先生的日常">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="擅先生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/29/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/" class="post-title-link" itemprop="url">防抖节流</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-29 13:41:33 / 修改时间：14:47:48" itemprop="dateCreated datePublished" datetime="2021-11-29T13:41:33+08:00">2021-11-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="防抖节流"><a href="#防抖节流" class="headerlink" title="防抖节流"></a>防抖节流</h2><ul>
+<li>防抖</li>
+</ul>
+<p>所谓防抖就是连续触发事件但是只有在 n 秒内无事件触发才执行函数，如按钮点击等<br>有后执行版和立即执行版实现，常用的是后执行版实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">var timer1 = null;</span><br><span class="line">var timer2 = null;</span><br><span class="line">// 后执行</span><br><span class="line">function fun1() &#123;</span><br><span class="line">  if (timer1) &#123;</span><br><span class="line">    clearTimeout(timer1);</span><br><span class="line">  &#125;</span><br><span class="line">  timer1 = setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(&quot;fun1&quot;);</span><br><span class="line">    timer1 = null;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line">// 先执行</span><br><span class="line">function fun2() &#123;</span><br><span class="line">  if (timer2) &#123;</span><br><span class="line">    clearTimeout(timer2);</span><br><span class="line">  &#125;</span><br><span class="line">  if (!timer2) &#123;</span><br><span class="line">    console.log(&quot;fun2&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  timer2 = setTimeout(() =&gt; &#123;</span><br><span class="line">    timer2 = null;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>节流</li>
+</ul>
+<p>所谓节流就是连续触发事件但是在 n 秒钟只触发一次，节流会稀释函数的执行频率。如 滚动条 scroll 事件<br>同样，也有后执行和先执行实现<br>并且有时间戳和定时器版  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">var timer3 = null;</span><br><span class="line">var timer4 = null;</span><br><span class="line">function fun3() &#123;</span><br><span class="line">  if (timer3) &#123;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  timer3 = setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(&quot;fun3&quot;);</span><br><span class="line">    timer3 = null;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line">function fun4() &#123;</span><br><span class="line">  if (timer4) &#123;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  if (!timer4) &#123;</span><br><span class="line">    console.log(&quot;fun4&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  timer4 = setTimeout(() =&gt; &#123;</span><br><span class="line">    timer4 = null;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 时间戳</span><br><span class="line">let previous = 0;</span><br><span class="line">function fun6()&#123;</span><br><span class="line">  let now = Date.now();</span><br><span class="line">  if(now - previous &gt; 1000)&#123;</span><br><span class="line">    console.log(&#x27;fun6&#x27;)</span><br><span class="line">    previous = now</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还可以进行一下包装，通用化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait, ...args) &#123;</span><br><span class="line">  let timeout;</span><br><span class="line">  return function () &#123;</span><br><span class="line">    let context = this;</span><br><span class="line"></span><br><span class="line">    if (timeout) clearTimeout(timeout);</span><br><span class="line"></span><br><span class="line">    let callNow = !timeout;</span><br><span class="line">    timeout = setTimeout(() =&gt; &#123;</span><br><span class="line">      timeout = null;</span><br><span class="line">    &#125;, wait);</span><br><span class="line"></span><br><span class="line">    if (callNow) func.apply(context, args);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">function test() &#123;</span><br><span class="line">  console.log(&quot;test&quot;);</span><br><span class="line">&#125;</span><br><span class="line">let fun0 = debounce(test, 500);</span><br></pre></td></tr></table></figure>
+
+
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c8b86b09daf0">https://www.jianshu.com/p/c8b86b09daf0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/25/continue-break-return/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -758,7 +833,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
