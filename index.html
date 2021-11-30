@@ -148,6 +148,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/30/%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yanzhi">
+      <meta itemprop="description" content="擅先生的日常">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="擅先生">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/30/%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6/" class="post-title-link" itemprop="url">常用事件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-30 17:21:06 / 修改时间：17:38:29" itemprop="dateCreated datePublished" datetime="2021-11-30T17:21:06+08:00">2021-11-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>window事件</li>
+<li>鼠标事件</li>
+<li>键盘事件</li>
+<li>tag事件</li>
+<li>拖动事件</li>
+<li>图片事件</li>
+<li>等等等</li>
+</ul>
+<h2 id="window事件"><a href="#window事件" class="headerlink" title="window事件"></a>window事件</h2><ul>
+<li>load 事件， 每次刷新都会触发</li>
+<li>resize 事件，每次窗口变化都会触发，在浏览器标签页上首次打开网站，也会触发</li>
+<li>pageshow 事件，紧接着load事件触发</li>
+</ul>
+<p>在新标签页打开网站，触发顺序为 resize load pageshow</p>
+<h3 id="刷新"><a href="#刷新" class="headerlink" title="刷新"></a>刷新</h3><p>会触发刷新动作的行为：</p>
+<ul>
+<li>首次进入页面</li>
+<li>点击a标签的链接</li>
+<li>F5 或者 刷新按钮 （或者开发者模式下刷新按钮右键的刷新你）</li>
+<li>前进后退按钮</li>
+</ul>
+<p>但是在火狐浏览器中，有个特点，有个”往返缓存“，这个缓存中不仅保存着页面数据，还保存了DOM和javascript的状态，实际上是将整个页面都保存在了内存里，<br>所以此时后退按钮就不能刷新页面，导致load事件不被执行。此时可以用pageshow事件</p>
+<h1 id="延申-DOM一二三级事件-TODO"><a href="#延申-DOM一二三级事件-TODO" class="headerlink" title="延申 DOM一二三级事件 TODO"></a>延申 DOM一二三级事件 TODO</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -833,7 +914,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
