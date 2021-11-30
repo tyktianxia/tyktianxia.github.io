@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="fun1()">防抖 后执行</button>
+    <button onclick="fun2()">防抖 先执行</button>
+    <button onclick="fun3()">节流 后执行</button>
+    <button onclick="fun4()">节流 先执行</button>
+    <hr />
+    <button onclick="fun0()">fun0</button>
+    <hr />
+    <button onclick="fun6()">时间戳</button>
+  </body>
+  <script>
+    var timer1 = null;
+    var timer2 = null;
+    var timer3 = null;
+    var timer4 = null;
+    function fun1() {
+      if (timer1) {
+        clearTimeout(timer1);
+      }
+      timer1 = setTimeout(() => {
+        console.log("fun1");
+        timer1 = null;
+      }, 1000);
+    }
+    function fun2() {
+      if (timer2) {
+        clearTimeout(timer2);
+      }
+      if (!timer2) {
+        console.log("fun2");
+      }
+      timer2 = setTimeout(() => {
+        timer2 = null;
+      }, 1000);
+    }
+    function fun3() {
+      if (timer3) {
+        return;
+      }
+      timer3 = setTimeout(() => {
+        console.log("fun3");
+        timer3 = null;
+      }, 1000);
+    }
+    function fun4() {
+      if (timer4) {
+        return;
+      }
+      if (!timer4) {
+        console.log("fun4");
+      }
+      timer4 = setTimeout(() => {
+        timer4 = null;
+      }, 1000);
+    }
+    function create() {
+      let timer = undefined;
+      return () => {
+        if (timer) {
+          clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+          console.log("fun1");
+          timer = null;
+        }, 1000);
+      };
+    }
+    function debounce(func, wait, ...args) {
+      let timeout;
+      return function () {
+        let context = this;
+
+        if (timeout) clearTimeout(timeout);
+
+        let callNow = !timeout;
+        timeout = setTimeout(() => {
+          timeout = null;
+        }, wait);
+
+        if (callNow) func.apply(context, args);
+      };
+    }
+    function test() {
+      console.log("test");
+    }
+    let fun0 = debounce(test, 500);
+
+    let previous = 0;
+    function fun6(){
+      let now = Date.now();
+      if(now - previous > 1000){
+        console.log('fun6')
+        previous = now
+      }
+    }
+  </script>
+</html>
