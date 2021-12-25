@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="擅先生的日常">
+  <meta name="description" content="GIT 常用命令基础 git init 初始化 git pull git push git fetch git merge test  提交 git commit -m “xxx” git commit –no-verify –m “XXX” 提交的时候跳过预校验  分支相关 git branch 查看本地分支 git branch -a 查看所有分支 git branch -d test 删除本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yanzhi">
-<meta property="og:url" content="http://example.com/2021/11/19/yanzhi/index.html">
+<meta property="og:title" content="git">
+<meta property="og:url" content="http://example.com/2021/12/17/git/index.html">
 <meta property="og:site_name" content="擅先生">
-<meta property="og:description" content="擅先生的日常">
+<meta property="og:description" content="GIT 常用命令基础 git init 初始化 git pull git push git fetch git merge test  提交 git commit -m “xxx” git commit –no-verify –m “XXX” 提交的时候跳过预校验  分支相关 git branch 查看本地分支 git branch -a 查看所有分支 git branch -d test 删除本">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-19T06:31:15.000Z">
-<meta property="article:modified_time" content="2021-11-19T09:12:39.746Z">
+<meta property="article:published_time" content="2021-12-17T03:41:15.000Z">
+<meta property="article:modified_time" content="2021-12-20T02:34:47.299Z">
 <meta property="article:author" content="yanzhi">
-<meta property="article:tag" content="擅先生">
+<meta property="article:tag" content="GIT">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/19/yanzhi/">
+<link rel="canonical" href="http://example.com/2021/12/17/git/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>yanzhi | 擅先生</title>
+  <title>git | 擅先生</title>
   
 
 
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/19/yanzhi/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/17/git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          yanzhi
+          git
         </h1>
 
         <div class="post-meta">
@@ -173,10 +173,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-11-19 14:31:15 / 修改时间：17:12:39" itemprop="dateCreated datePublished" datetime="2021-11-19T14:31:15+08:00">2021-11-19</time>
+              <time title="创建时间：2021-12-17 11:41:15" itemprop="dateCreated datePublished" datetime="2021-12-17T11:41:15+08:00">2021-12-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-20 10:34:47" itemprop="dateModified" datetime="2021-12-20T10:34:47+08:00">2021-12-20</time>
+              </span>
 
           
 
@@ -189,7 +195,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="GIT-常用命令"><a href="#GIT-常用命令" class="headerlink" title="GIT 常用命令"></a>GIT 常用命令</h1><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><ul>
+<li>git init 初始化</li>
+<li>git pull</li>
+<li>git push</li>
+<li>git fetch</li>
+<li>git merge test</li>
+</ul>
+<h4 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h4><ul>
+<li>git commit -m “xxx”</li>
+<li>git commit –no-verify –m “XXX” 提交的时候跳过预校验</li>
+</ul>
+<h4 id="分支相关"><a href="#分支相关" class="headerlink" title="分支相关"></a>分支相关</h4><ul>
+<li>git branch 查看本地分支</li>
+<li>git branch -a 查看所有分支</li>
+<li>git branch -d test 删除本地分支</li>
+<li>git branch -D test 强制删除本地分支</li>
+<li>git checkout test 切换到 test 分支</li>
+<li>git checkout -b test 从当前分支检出 test 分支，且切换到 test 分支</li>
+<li>git checkout -b dev(本地分支名称) origin/develop(远程分支名称) 拉取远程分支</li>
+</ul>
+<h4 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h4><ul>
+<li>git log 查看当前分支的日志（主要时commit及描述、时间、作者等）</li>
+<li>git reflog 查看当前库的详细日志（多分支的commit、merge、checkout、等）</li>
+<li>git status 查看上次提交之后是否有修改</li>
+</ul>
+<h4 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h4><h4 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h4><h4 id="reset"><a href="#reset" class="headerlink" title="reset"></a>reset</h4><ul>
+<li>git reset HEAD –hard  恢复到最新提交</li>
+<li>git reset HEAD~1 –hard 恢复到最新提交的前一次提交</li>
+</ul>
+
     </div>
 
     
@@ -197,16 +232,22 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/GIT/" rel="tag"># GIT</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/11/19/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/17/%E6%93%8D%E4%BD%9C%E7%AC%A6/" rel="prev" title="操作符">
+      <i class="fa fa-chevron-left"></i> 操作符
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/20/JSON/" rel="next" title="JSON">
+      JSON <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -266,6 +307,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GIT-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">GIT 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%9B%B8%E5%85%B3"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">分支相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">查看状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rebase"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cherry-pick"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">cherry-pick</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reset"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">reset</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

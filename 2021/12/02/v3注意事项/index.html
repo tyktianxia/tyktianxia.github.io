@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="擅先生的日常">
+  <meta name="description" content="vue3 爬坑self ref &amp; reactive   两者都是为普通变量添加响应式 ref 处理基本数据类型；reactive 处理非基本数据类型（数组、对象等）； ref()的参数也可以是对象类型，底层会调用 reactive() ref 生成的代理，操作时需要.value;reactive 生成的代理对象，会自动解包，不需要.value; 在模板中使用 ref || reactiv">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yanzhi">
-<meta property="og:url" content="http://example.com/2021/11/19/yanzhi/index.html">
+<meta property="og:title" content="v3注意事项">
+<meta property="og:url" content="http://example.com/2021/12/02/v3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="擅先生">
-<meta property="og:description" content="擅先生的日常">
+<meta property="og:description" content="vue3 爬坑self ref &amp; reactive   两者都是为普通变量添加响应式 ref 处理基本数据类型；reactive 处理非基本数据类型（数组、对象等）； ref()的参数也可以是对象类型，底层会调用 reactive() ref 生成的代理，操作时需要.value;reactive 生成的代理对象，会自动解包，不需要.value; 在模板中使用 ref || reactiv">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-19T06:31:15.000Z">
-<meta property="article:modified_time" content="2021-11-19T09:12:39.746Z">
+<meta property="article:published_time" content="2021-12-02T02:01:59.000Z">
+<meta property="article:modified_time" content="2021-12-02T10:08:47.707Z">
 <meta property="article:author" content="yanzhi">
-<meta property="article:tag" content="擅先生">
+<meta property="article:tag" content="JS Vue3">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/19/yanzhi/">
+<link rel="canonical" href="http://example.com/2021/12/02/v3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>yanzhi | 擅先生</title>
+  <title>v3注意事项 | 擅先生</title>
   
 
 
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/19/yanzhi/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/02/v3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          yanzhi
+          v3注意事项
         </h1>
 
         <div class="post-meta">
@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-11-19 14:31:15 / 修改时间：17:12:39" itemprop="dateCreated datePublished" datetime="2021-11-19T14:31:15+08:00">2021-11-19</time>
+              <time title="创建时间：2021-12-02 10:01:59 / 修改时间：18:08:47" itemprop="dateCreated datePublished" datetime="2021-12-02T10:01:59+08:00">2021-12-02</time>
             </span>
 
           
@@ -189,7 +189,86 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="vue3-爬坑self"><a href="#vue3-爬坑self" class="headerlink" title="vue3 爬坑self"></a>vue3 爬坑self</h1><ol>
+<li>ref &amp; reactive</li>
+</ol>
+<ul>
+<li>两者都是为普通变量添加响应式</li>
+<li>ref 处理基本数据类型；reactive 处理非基本数据类型（数组、对象等）；</li>
+<li>ref()的参数也可以是对象类型，底层会调用 reactive()</li>
+<li>ref 生成的代理，操作时需要.value;reactive 生成的代理对象，会自动解包，不需要.value;</li>
+<li>在模板中使用 ref || reactive 生成的代理，均不需要.value, vue 会自动解析</li>
+<li>reactive代理对象的非嵌套key，对应的value，不是ref</li>
+<li>ref和reactive 底层不同</li>
+</ul>
+<ol start="2">
+<li>watch</li>
+</ol>
+<ul>
+<li>watch api</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">watch(</span><br><span class="line">  数据源</span><br><span class="line">  回调,</span><br><span class="line">  &#123;</span><br><span class="line">    immediate: true,</span><br><span class="line">    deep: true,</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>watch 监听响应性数据</li>
+<li>数据源可以是 getter 函数，或者是一个 ref （ref | reactive | reactive对象的非嵌套对象）</li>
+<li>数据源可以多个，用数组包裹即可</li>
+<li>监听响应式对象时（比如，reactive()），要有一个由值构成的副本。否则newVal和oldValue都是proxy, oldValue的值不正确（至少看着是，等波源码）</li>
+<li>副本如：<code>()=&gt;[...arr]</code> || <code>()=&gt;(&#123;...obj&#125;)</code>,这样会监听到正确的结果 (等波源码))</li>
+<li>多个同步更改只会触发一次watch。 可以使用 await nextTick()避免。或者设置flush:’sync,(每次更改都会触发一次watch，不推荐)</li>
+<li></li>
+</ul>
+<ol start="3">
+<li>watchEffect</li>
+</ol>
+<ul>
+<li>和计算属性类似，</li>
+<li>计算属性侧重结果，要有 return</li>
+<li>watchEffect 侧重过程，函数体依赖哪个变量，就监听哪个变量</li>
+<li>TODO 需深度理解</li>
+<li><a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/guide/reactivity-computed-watchers.html#%E5%81%9C%E6%AD%A2%E4%BE%A6%E5%90%AC">文档</a></li>
+</ul>
+<ol start="4">
+<li>注意事项</li>
+</ol>
+<ul>
+<li>扩展运算符会丢失响应性，但只丢失第一层的响应性。如果是嵌套对象，扩展运算符运行之后，第二层及以下依旧保持响应性</li>
+<li>使用reactive声明代理对象时，会深度转换，每一层的嵌套对象都会转换为reactive对象，但是非对象的不会转为ref();(等一个源码解析)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const y = reactive(&#123; name: &#123; zh: &quot;ppp&quot; &#125;, age: 12 &#125;);</span><br><span class="line">const u = &#123; ...y &#125;;</span><br><span class="line">console.log(isRef(y.age));  false</span><br><span class="line">console.log(isReactive(y.name));  true </span><br><span class="line">console.log(isReactive(u.name));  true</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="5">
+<li>updated钩子函数</li>
+</ol>
+<ul>
+<li><strong>由数据变更导致dom变更，才会触发这个钩子，v2一样</strong>，即，数据更新不会导致dom变更，此钩子不会触发</li>
+</ul>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li>扩展运算符</li>
+</ol>
+<ul>
+<li>ES6 新增的符号 …[数组|字符串|对象]， 如果是对象时，要在外边加上{}，不然会报错。如 {…obj}</li>
+<li>将数组、字符串在语法层面上展开</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let str = &#x27;abc&#x27;</span><br><span class="line">let obj = &#123;name:&#x27;yanzhi&#x27;&#125;</span><br><span class="line"></span><br><span class="line">...[1,2,3,4] =&gt; 1,2,3,4</span><br><span class="line">...str = &#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;</span><br><span class="line">&#123;...obj&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以用来拼装新变量，而不影响原有 如：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let obj2 = &#123;...obj,age:12&#125;;</span><br><span class="line">let arr2 = [...arr,9,0]</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>箭头函数</li>
+</ol>
+<ul>
+<li><code>const fun0 = ()=&gt;true</code> 省略函数体括号{}及return</li>
+<li><code>const fun0 = ()=&gt;&#123;return true&#125;</code></li>
+<li><code>const fun0 = ()=&gt;1+2</code>  表达式</li>
+<li><code>const fun0 = ()=&gt;(&#123;age:12&#125;)</code> // 返回一个对象（需要括号包裹返回对象）</li>
+<li><code>const fun0 = ()=&gt;&#123;return &#123;age:12&#125;&#125;</code> </li>
+<li>函数体括号{}及return 要么都有，要么都没有。</li>
+</ul>
+<ol start="3">
+<li>v3的响应性处理和v2的有点不同，需注意，走一波源码</li>
+</ol>
+
     </div>
 
     
@@ -197,16 +276,22 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JS-Vue3/" rel="tag"># JS Vue3</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/11/19/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/01/yarn-npm/" rel="prev" title="yarn_npm">
+      <i class="fa fa-chevron-left"></i> yarn_npm
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/02/v2%E6%B3%A8%E6%84%8F/" rel="next" title="v2注意">
+      v2注意 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -266,6 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue3-%E7%88%AC%E5%9D%91self"><span class="nav-number">1.</span> <span class="nav-text">vue3 爬坑self</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">1.1.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

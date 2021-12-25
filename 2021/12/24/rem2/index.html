@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="擅先生的日常">
+  <meta name="description" content="rem &amp; em rem:root em, css3新增，相对与根元素html字体大小。 根元素字体 绝大部分浏览器默认16px，故默认情况下，1rem &#x3D; 16px;123451rm &#x3D; 16px16px &#x3D; 1rem10px &#x3D; 0.625rem1px &#x3D; 0.0625rem5px &#x3D; 0.0625rem *5 (算不清了，故 可以在开发时，给根元素一个合理的字体大小，方便计算，但后面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yanzhi">
-<meta property="og:url" content="http://example.com/2021/11/19/yanzhi/index.html">
+<meta property="og:title" content="rem2">
+<meta property="og:url" content="http://example.com/2021/12/24/rem2/index.html">
 <meta property="og:site_name" content="擅先生">
-<meta property="og:description" content="擅先生的日常">
+<meta property="og:description" content="rem &amp; em rem:root em, css3新增，相对与根元素html字体大小。 根元素字体 绝大部分浏览器默认16px，故默认情况下，1rem &#x3D; 16px;123451rm &#x3D; 16px16px &#x3D; 1rem10px &#x3D; 0.625rem1px &#x3D; 0.0625rem5px &#x3D; 0.0625rem *5 (算不清了，故 可以在开发时，给根元素一个合理的字体大小，方便计算，但后面">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-19T06:31:15.000Z">
-<meta property="article:modified_time" content="2021-11-19T09:12:39.746Z">
+<meta property="article:published_time" content="2021-12-24T01:23:44.000Z">
+<meta property="article:modified_time" content="2021-12-25T05:38:27.617Z">
 <meta property="article:author" content="yanzhi">
-<meta property="article:tag" content="擅先生">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/19/yanzhi/">
+<link rel="canonical" href="http://example.com/2021/12/24/rem2/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>yanzhi | 擅先生</title>
+  <title>rem2 | 擅先生</title>
   
 
 
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/19/yanzhi/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/24/rem2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          yanzhi
+          rem2
         </h1>
 
         <div class="post-meta">
@@ -173,10 +173,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-11-19 14:31:15 / 修改时间：17:12:39" itemprop="dateCreated datePublished" datetime="2021-11-19T14:31:15+08:00">2021-11-19</time>
+              <time title="创建时间：2021-12-24 09:23:44" itemprop="dateCreated datePublished" datetime="2021-12-24T09:23:44+08:00">2021-12-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-25 13:38:27" itemprop="dateModified" datetime="2021-12-25T13:38:27+08:00">2021-12-25</time>
+              </span>
 
           
 
@@ -189,7 +195,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="rem-amp-em"><a href="#rem-amp-em" class="headerlink" title="rem &amp; em"></a>rem &amp; em</h1><ul>
+<li>rem:root em, css3新增，相对与根元素html字体大小。</li>
+<li>根元素字体 绝大部分浏览器默认16px，故默认情况下，1rem = 16px;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1rm = 16px</span><br><span class="line">16px = 1rem</span><br><span class="line">10px = 0.625rem</span><br><span class="line">1px = 0.0625rem</span><br><span class="line">5px = 0.0625rem *5 (算不清了，故 可以在开发时，给根元素一个合理的字体大小，方便计算，但后面出现了工具会自动转换rem，额) </span><br></pre></td></tr></table></figure></li>
+<li>可以手动改变根元素的font-size的大小。如 根元素大小改为10px||62.5%（使用百分比是因为，px是绝对单位；如果长度用px表示，在不同分辨率的屏幕上，可能会出现奇奇怪怪的问题，这时就需要用相对单位了）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1rem = 10px</span><br><span class="line">10px = 1rem</span><br><span class="line">1px = 0.1rem</span><br><span class="line">5px = 0.5rem (可以看到，如果将根元素大小设为10px|62.5%时，rem计算就比较清楚了。当然，也可以设置为100px等)</span><br></pre></td></tr></table></figure></li>
+<li>rem为相对单位，又是相对于根元素的字体大小。可以这样理解，根元素字体大小改变，所有依赖rem的元素大小也相对改变，变相实现响应式。故出现了rem.js,通过监听resize事件等，改变根元素字体大小，以此来模拟响应性。</li>
+<li>开发时的根元素大小。<ul>
+<li>有设计稿的话，设计稿宽度/10？ 即使有工具帮忙处理，但最好设置一个相对友好的大小（主要是计算方便，看的方便，心算方便），不然处理局部的小细节，还得拿着计算器。</li>
+<li>默认37.5px，视口默认375px（iphone 6大小）</li>
+</ul>
+</li>
+<li>实际的根元素大小 （rem.js)<ul>
+<li>通过监听resize事件，动态设置根元素字体大小。（也可监听横竖屏切换）</li>
+<li>DOMContentLoaded 事件， 初始化事件</li>
+<li>orientationchange safari提供，横竖屏切换触发</li>
+<li>window.orientation<ul>
+<li>0 180 竖屏</li>
+<li>90 -90 横屏</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>自动转换 （px-&gt;rem）  postcss postcss-pxtorem</li>
+<li>rem.js 用于初始化/监听 窗口大小下的合适的根元素字体大小，以此来做到响应性</li>
+</ul>
+
     </div>
 
     
@@ -197,17 +229,20 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/11/19/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/20/typescript/" rel="prev" title="typescript">
+      <i class="fa fa-chevron-left"></i> typescript
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -266,6 +301,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rem-amp-em"><span class="nav-number">1.</span> <span class="nav-text">rem &amp; em</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

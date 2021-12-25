@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="擅先生的日常">
+  <meta name="description" content="JSON注意事项 序列化和反序列化时，不会识别函数、正则、syboml等 反序列化时，为声明的数组下标，会自动补null123let arr &#x3D; []arr[5] &#x3D; 12let arr2 &#x3D; JSON.parse(JSON.stringfy(arr)) &#x2F;&#x2F; [null,null,null,null,12],这样会导致遍历时，取lenght报错">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yanzhi">
-<meta property="og:url" content="http://example.com/2021/11/19/yanzhi/index.html">
+<meta property="og:title" content="JSON">
+<meta property="og:url" content="http://example.com/2021/12/20/JSON/index.html">
 <meta property="og:site_name" content="擅先生">
-<meta property="og:description" content="擅先生的日常">
+<meta property="og:description" content="JSON注意事项 序列化和反序列化时，不会识别函数、正则、syboml等 反序列化时，为声明的数组下标，会自动补null123let arr &#x3D; []arr[5] &#x3D; 12let arr2 &#x3D; JSON.parse(JSON.stringfy(arr)) &#x2F;&#x2F; [null,null,null,null,12],这样会导致遍历时，取lenght报错">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-19T06:31:15.000Z">
-<meta property="article:modified_time" content="2021-11-19T09:12:39.746Z">
+<meta property="article:published_time" content="2021-12-20T02:38:05.000Z">
+<meta property="article:modified_time" content="2021-12-20T02:41:22.464Z">
 <meta property="article:author" content="yanzhi">
-<meta property="article:tag" content="擅先生">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/19/yanzhi/">
+<link rel="canonical" href="http://example.com/2021/12/20/JSON/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>yanzhi | 擅先生</title>
+  <title>JSON | 擅先生</title>
   
 
 
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/19/yanzhi/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/20/JSON/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          yanzhi
+          JSON
         </h1>
 
         <div class="post-meta">
@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-11-19 14:31:15 / 修改时间：17:12:39" itemprop="dateCreated datePublished" datetime="2021-11-19T14:31:15+08:00">2021-11-19</time>
+              <time title="创建时间：2021-12-20 10:38:05 / 修改时间：10:41:22" itemprop="dateCreated datePublished" datetime="2021-12-20T10:38:05+08:00">2021-12-20</time>
             </span>
 
           
@@ -189,7 +189,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>序列化和反序列化时，不会识别函数、正则、syboml等</li>
+<li>反序列化时，为声明的数组下标，会自动补null<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = []</span><br><span class="line">arr[5] = 12</span><br><span class="line">let arr2 = JSON.parse(JSON.stringfy(arr)) // [null,null,null,null,12],这样会导致遍历时，取lenght报错</span><br></pre></td></tr></table></figure></li>
+</ul>
+
     </div>
 
     
@@ -197,16 +201,22 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JS/" rel="tag"># JS</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/11/19/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/17/git/" rel="prev" title="git">
+      <i class="fa fa-chevron-left"></i> git
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/20/typescript/" rel="next" title="typescript">
+      typescript <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -266,6 +276,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">1.</span> <span class="nav-text">JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.0.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
