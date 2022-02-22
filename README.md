@@ -1,3 +1,1 @@
-# tyktianxia.github.io
-
-hexo product
+浪漫世界，值得孤身。
